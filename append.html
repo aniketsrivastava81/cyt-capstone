@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Append Div using JS</title> 
+</head> 
+
+<body> 
+	<div id="addme"> 
+		<h1 id="willchange">Already Existing</h1> 
+		<p>This is the text which has already been typed into the div</p> 
+	</div> 
+
+	<button onclick="addCode()">Add Stuff</button> 
+	<script> 
+		function addCode() { 
+			document.getElementById("addme").innerHTML += 
+			"<h3>This is the text which has been inserted by JS</h3>";
+			document.getElementById("willchange").innerHTML += 
+			"<h1>This is the text which has been inserted by JS</h1>";
+
+		} 
+	</script> 
+</body> 
+
+</html> 

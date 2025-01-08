@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <script>
+    // we can do 3 tests - make them do math test, mouse log and deny basic input '*/ 
+
+/*function myFunction() {
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("numb").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || x != 42) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+
+*/
+function myFunction2() {
+  var x1, text1;
+
+  // Get the value of the input field with id="numb"
+  x1 = document.getElementById("numb2").value;
+
+  // If x is Not a Number or less than one or greater than 10
+//  if (isNaN(x) || x != "/" || x != "*" || x != "'") {
+    if (isNaN(x1)) {
+    text1 = "Input not valid";
+  } else {
+    text1 = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</head>
+
+
+<body>
+
+<h2>JavaScript To Validate User</h2>
+
+<!-- <p>Please input the math answer for 7*7-7 </p>
+<input id="numb">
+<button type="button" onclick="myFunction()">Submit</button>
+ !-->
+
+<p>Please Enter Username</p>
+<input id="numb2">
+<button type="button" onclick="myFunction2()">Submit</button>
+
+<p id="demo">sd</p>
+<p id="demo2">a</p>
+
+
+
+
+</body>
+</html> 

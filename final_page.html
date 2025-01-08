@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<title> FINAL FILE - PAGE 2 ANALYSIS</title>
+<meta charset="utf-8"/>
+<script type="text/javascript"> 
+	console.log(navigator.userAgent);
+
+if(navigator.userAgent.indexOf("Edg") != -1 ){// && navigator.userAgent.indexOf('Chrome')){
+test = navigator.userAgent.indexOf('Edg');
+test1 = navigator.userAgent;
+test2 = test1.substr(test);
+test3 = test2.substr(2,13);
+var test4 = test3.toString();
+var test5 = test4.substr(1,11);
+isEdge=1;
+
+var test6 = test5.split("/");
+var test7 = test6[1];
+var test8 = test6.slice(0);
+console.log(test8);
+document.write("Version number of your browser is: <b>"+test8[1]+"</b>");
+document.write("<br/>"+test8[1]);
+
+// WE GET EDGE VERSION NUMBER document.write(test2);
+}
+// _______________________________________________________________________________________________________________________
+
+
+
+else if(navigator.userAgent.indexOf("Firefox") != -1 ){
+test3 = navigator.userAgent.indexOf("Firefox");
+test1 = navigator.userAgent;
+test2 = test1.substr(test3); // WE GET Firefox VERSION NUMBER 
+test = test2.substr(8,2);
+console.log(test);
+document.write("Version number of your browser is:");
+document.write("<br/>"+test2);
+/*if(isChrome=="0"){document.write(test2);} 
+else {document.write("<br/>")};
+*/}
+// _______________________________________________________________________________________________________________________
+
+
+
+
+else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+test = navigator.userAgent.indexOf("Chrome");
+test1 = navigator.userAgent;
+ if(isEdge!=1)
+{test2 = test1.substr("<br/>"+test+4,2);}
+// WE GET EDGE VERSION NUMBER 
+document.write("Version number of your browser is:");
+document.write(test2);
+isChrome=1
+/*test2=0;
+test1=0;
+test=0;
+*/}
+// _______________________________________________________________________________________________________________________
+
+// else 
+
+// _________________________________________________________________________________________________________________________________________
+if ("xr" in window.navigator) {
+  xrr = "VR is Supported";
+} else {
+  xrr = "VR is NOT Supported";
+}
+
+if(navigator.userAgent.indexOf("Firefox") != -1 ) {
+    var browser = "Firefox";
+} 
+else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+    var browser = "Chrome";
+} 
+else if(navigator.userAgent.indexOf("Edg") != -1 ) {
+    var browser = "Edge";
+}
+if(navigator.userAgent.indexOf("Mac") != -1 )
+{
+  var os = "Mac"
+} else if(navigator.userAgent.indexOf("Windows") != -1 ){
+  var os = "Windows"
+}
+if(navigator.userAgent.indexOf("Android") != -1 )
+{
+           droid = "Yes, it is an Android";
+} else { droid = "No, it is not an Android"};
+if(navigator.userAgent.indexOf("x64") != -1 )
+{
+  var arch = "x64";
+}
+
+// __________________________________________________________________________________________________________________________________________
+
+document.write("<table>")
+document.write("<tr><td> What is the users OS? ")
+document.write("<td><b>The OS Being Used is: "+os+"</b></td></tr>")
+document.write("<tr><td> What is the OS Architecture? ")
+document.write("<td><b>The architecture is: "+arch+"</b></td></tr>")
+document.write("<tr><td> What is the User's Browser? </td>");
+document.write("<td>User browser is: <b>"+browser+"</b></td></tr>")
+document.write("<tr><td> Is virtual reality supported? : </td>");
+document.write("<td><b>"+xrr+"</b></td></tr>");
+document.write("<td>Is the user on Android? </td>");
+document.write("<td><b>"+droid+"</b></td></tr>")
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+<!--___________________________________________________________________!>
+	<script>
+//user-defined function to download CSV file
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+   
+    //define the file type to text/csv
+    csvFile = new Blob([csv], {type: 'text/csv'});
+    downloadLink = document.createElement("a");
+    downloadLink.download = filename;
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = "none";
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+}
+
+//user-defined function to export the data to CSV file format
+function exportTableToCSV(filename) {
+   //declare a JavaScript variable of array type
+   var csv = [];
+   var rows = document.querySelectorAll("table tr");
+ 
+   //merge the whole data in tabular form 
+   for(var i=0; i<rows.length; i++) {
+	var row = [], cols = rows[i].querySelectorAll("td, th");
+	for( var j=0; j<cols.length; j++)
+	   row.push(cols[j].innerText);
+	csv.push(row.join(","));
+   } 
+   //call the function to download the CSV file
+   downloadCSV(csv.join("\n"), filename);
+}
+</script>
+
+<body>
+// create table and provide data inside it 
+<table>
+<tr>
+	<th> Name </th>
+	<th> Profession </th>
+	
+</tr>
+<tr>
+	<td> ABC </td>
+	<td> XYZ </td>
+	
+</tr>
+<tr>
+	<td> 123 </td>
+	<td> 456 </td>
+	
+</tr>
+<tr>
+	<td> !@# </td>
+	<td> *&^ </td>
+</tr>
+</table>
+<p><b> Click the button to download CSV </b></p>
+
+// button to call the user-defined function to download CSV file data
+<button onclick="exportTableToCSV('demo.csv')"> Export HTML table to CSV File </button> 
+</body>
+</html>

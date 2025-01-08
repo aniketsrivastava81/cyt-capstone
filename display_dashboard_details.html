@@ -1,0 +1,370 @@
+<html>
+<head>
+<title> Group_2 - JS recon</title>
+<style>
+
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+<style>
+#maintable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#maintable td, #maintable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#maintable tr:nth-child(even){background-color: #f2f2f2;}
+
+#maintable tr:hover {background-color: #ddd;}
+
+#maintable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #FCFF5F;
+  color: white;
+
+</style>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script>
+
+
+        fetch('http://ip-api.com/json')
+        .then(   (apidata) => { 
+            console.log(apidata); 
+            return apidata.json();
+        })
+        .then(   (actualdata) => {
+            console.log(actualdata);
+                      document.write("how to conduct a simple recon"+"<br/>");
+                      document.write("<table border="+10+" id='maintable'>");
+      document.write("<tr><td><h2> Property Obtanied </h3></td><td><h3>Values Detected:</h2></td></tr>");
+      document.write("<tr><td><h3>Network Details</h3></td><td></td></tr>");
+      document.write("<td> Country: </td><td><b>"+actualdata.country+"</b><br/></td></tr>");
+			document.write("<tr><td> Country Code: </td><td><b>"+actualdata.countryCode+"</b><br/></td></tr>");
+			document.write("<tr><td> Region code: </td><td><b>"+actualdata.region+"</b><br/></td></tr>");
+			document.write("<tr><td> Region Name: </td><td><b>"+actualdata.regionName+"</b><br/></td></tr>");
+			document.write("<tr><td> City: </td><td><b>"+actualdata.city+"</b><br/></td></tr>");
+			document.write("<tr><td> ZIP Code: </td><td><b>"+actualdata.zip+"</b><br/></td></tr>");
+			document.write("<tr><td> Latitude: </td><td><b>"+actualdata.lat+"</b><br/></td></tr>");
+			document.write("<tr><td> Longitude: </td><td><b>"+actualdata.lon+"</b><br/></td></tr>");
+			document.write("<tr><td> Timezone: </td><td><b>"+actualdata.timezone+"</b><br/></td></tr>");
+			document.write("<tr><td> ISP Name: </td><td><b>"+actualdata.isp+"</b><br/></td></tr>");
+			document.write("<tr><td> ISP ORG Name: </td><td><b>"+actualdata.org+"</b><br/></td></tr>");
+			document.write("<tr><td> Timezone: </td><td><b>"+actualdata.as+"</b><br/></td></tr>");
+//			document.write("IP Address: <b>"+actualdata.query+"</b><br/>");
+        	document.body.style.backgroundColor = "#ABC07A";
+        	            document.write("</tr></td>");
+//document.write("_____________________________________________________________________________________________");
+//            document.write("<tr><td>");
+
+  document.write("<tr><td><h3> Other Network Properties</td></tr> </h3>");
+  document.write("<tr><td> Type Of connection: </td> <td><b>"+navigator.connection.type+"</b><br/></td></tr>");
+  document.write("<tr><td> Download Speed: </td><td><b>"+ navigator.connection.downlink +"Mb/s </b><br/></td></tr>");
+  document.write("<tr><td> Rount-trip-time estimate: </td><td><b>"+ navigator.connection.rtt + " ms+</b><br/></td></tr>");
+  document.write("<tr><td> Speed of first network hop: </td><td><b>"+ navigator.connection.downlinkMax + " Mb/s</b><br/></td></tr>");
+  document.write("<tr><td> effectiveType: </td><td><b>"+ navigator.connection.effectiveType+"</b><br/></td></tr>");
+  document.write("<tr><td>Is the option to save data enabled? </td><td><b>"+navigator.connection.saveData+"</b><br/></td></tr>");
+  document.write('');
+//   counter_1=1;
+// }}
+
+// logNetworkInfo();	
+//            document.write("</tr></td>");
+
+//document.write("_____________________________________________________________________________________________");
+
+//            document.write("<tr><td><br></td></tr>");
+
+
+
+
+
+
+
+document.write("<tr><td><h3> Screen Properties </h3></td><td></tr>");
+document.write("<tr><td>Window Screen Width Is: </td><td><b>"+window.screen.width+"</b><br/></tr>");
+document.write("<tr><td>Window Screen Height Is: </td><td><b>"+window.screen.height+"</b><br/></tr>");
+document.write("<tr><td>Device Screen Color Depth Is: </td><td><b>"+window.screen.colorDepth+"</b><br/></tr>");
+document.write("<tr><td>Device Screen orientation Is: </td><td><b>"+window.screen.orientation.type+"</b><br/></tr>");
+document.write("<tr><td>Device Screen Pixel Depth Is: </td><td><b>"+window.screen.pixelDepth+"</b><br/></tr>");
+document.write("<tr><td>PiP Enabled?: </td><td><b>"+document.pictureInPictureEnabled+"</b><br/></td></tr>");
+
+//            document.write("<br/>");
+//____________________________________________________________________________________________________________________________
+
+
+//____________________________________________________________________________________________________________________________
+
+
+//            document.write("<tr><td>");
+
+document.write("<tr><td><h3> Device Properties </h3></td></tr>"); 
+document.write("<tr><td>App Code Name/Browser Name: </td><td><b>"+navigator.appCodeName+"</b><br/></td></tr>");
+document.write("<tr><td>Are Cookies Enabled?: </td><td><b>"+navigator.cookieEnabled+"</b><br/></td></tr>");
+document.write("<tr><td>Device Memory: (chrome/edge) </td><td><b>"+navigator.deviceMemory+"GB </b><br/></td></tr>");
+document.write("<tr><td>Is do not track enabled? (prints 1 if true): </td><td><b>"+navigator.doNotTrack+"</b><br/></td></tr>");
+document.write("<tr><td>Number of cores present in the Device: </td><td><b>"+navigator.hardwareConcurrency+"</b><br/></td></tr>");
+document.write("<tr><td>Is Java Enabled? (in the browser) : </td><td><b>"+navigator.javaEnabled()+"</b><br/></td></tr>");
+document.write("<tr><td>Language of Browser: </td><td><b>"+navigator.language+"</b><br/></td></tr>");
+document.write("<tr><td>Maximum number of concurrent Touch Points: (if > 1 then its not touch) </td><td><b>"+navigator.maxTouchPoints+"</b><br/></td></tr>");
+document.write("<tr><td>Is device online? (prints 1 if true): </td><td><b>"+window.navigator.onLine+"</b><br/></td></tr>");
+document.write("<tr><td>details about the vendor of the browser (blank is firefox): </td><td><b>"+window.navigator.vendor+"</b><br/></td></tr>");
+document.write("<tr><td>is the page automated?: (firefox) </td><td><b>"+window.navigator.webdriver+"</b><br/></td></tr>");
+document.write("<tr><td>user Agent output: </td><td><b>"+window.navigator.userAgent+"</b><br/></td></tr>");
+
+
+// var xrr, browser, os, arch, droid;
+
+/*
+document.write("<tr><td> Is virtual reality supported? (0 if Not Supported) : </td>");
+
+ if ("xr" in window.navigator) {
+  return xrr = 0;
+} else {
+  return xrr = 1;
+}
+document.write("<td>"+xrr+"</td></tr>");
+
+document.write("<tr><td> What is the User's Browser? </td>");
+
+if(navigator.userAgent.indexOf("Firefox") != -1 ) {
+    var browser = "Firefox";
+} 
+else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+    var browser = "Chrome";
+} 
+else if(navigator.userAgent.indexOf("Edg") != -1 ) {
+    var browser = "Edge";
+}
+document.write("<td>"+browser+"</td></tr>")
+
+document.write("<tr><td> What is the users OS? ")
+if(navigator.userAgent.indexOf("Mac") != -1 )
+{
+  var os = "Mac"
+} else if(navigator.userAgent.indexOf("Windows") != -1 ){
+  var os = "Windows"
+}
+document.write("<td>"+os+"</td></tr>")
+document.write("Android?");
+if(navigator.userAgent.indexOf("Android") != -1 )
+{
+           droid = 1;
+}
+if(navigator.userAgent.indexOf("x64") != -1 )
+{
+  var arch = "x64";
+}
+//
+//if(navigator.userAgent.indexOf("Edg") != -1 )
+//
+//{
+ //          document.write ("rv: ");
+  //         document.write(navigator.userAgent.indexOf('Edg'));
+//}
+
+
+
+// NEEDS WORK; to seperate out elements
+  //          document.write("</tr></td>");
+
+//document.write("_____________________________________________________________________________________________");
+
+
+// div tag needs to be inside body, this needs to be last.
+// document.write(" <tr><td><h1> This is the div tag that will notice the mouse behaviour and launch an alert if we escape the div box </h1></td></tr>");
+// need to bring it document page. 
+
+
+
+//____________________________________________________________________________________________________________________________
+*/
+
+
+
+
+
+
+
+
+var test, test2, test3;
+
+// _______________________________________________________________________________________________________________________
+
+if(navigator.userAgent.indexOf("Edg") != -1 ){// && navigator.userAgent.indexOf('Chrome')){
+test = navigator.userAgent.indexOf('Edg');
+test1 = navigator.userAgent;
+test2 = test1.substr(test);
+test3 = test2.substr(2,13);
+var test4 = test3.toString();
+var test5 = test4.substr(1,11);
+isEdge=1;
+
+var test6 = test5.split("/");
+var test7 = test6[1];
+var test8 = test6.slice(0);
+console.log(test8);
+console.log("<br/>"+test8[1]);
+
+// WE GET EDGE VERSION NUMBER document.write(test2);
+}
+// _______________________________________________________________________________________________________________________
+
+
+
+else if(navigator.userAgent.indexOf("Firefox") != -1 ){
+test3 = navigator.userAgent.indexOf("Firefox");
+test1 = navigator.userAgent;
+test2 = test1.substr(test3); // WE GET Firefox VERSION NUMBER 
+test = test2.substr(8,2);
+console.log(test);
+console.log("<br/>"+test2);
+/*if(isChrome=="0"){document.write(test2);} 
+else {document.write("<br/>")};
+*/}
+// _______________________________________________________________________________________________________________________
+
+
+
+
+else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+test = navigator.userAgent.indexOf("Chrome");
+test1 = navigator.userAgent;
+ if(isEdge!=1)
+{test2 = test1.substr("<br/>"+test+4,2);}
+// WE GET EDGE VERSION NUMBER 
+console.log(test2);
+isChrome=1
+/*test2=0;
+test1=0;
+test=0;
+*/}
+// _______________________________________________________________________________________________________________________
+
+// else 
+
+// _________________________________________________________________________________________________________________________________________
+if ("xr" in window.navigator) {
+  xrr = "VR is Supported";
+} else {
+  xrr = "VR is NOT Supported";
+}
+
+if(navigator.userAgent.indexOf("Firefox") != -1 ) {
+    var browser = "Firefox";
+} 
+else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+    var browser = "Chrome";
+} 
+else if(navigator.userAgent.indexOf("Edg") != -1 ) {
+    var browser = "Edge";
+}
+if(navigator.userAgent.indexOf("Mac") != -1 )
+{
+  var os = "Mac"
+} else if(navigator.userAgent.indexOf("Windows") != -1 ){
+  var os = "Windows"
+}
+if(navigator.userAgent.indexOf("Android") != -1 )
+{
+          var droid = "Yes, it is an Android";
+} else { var droid = "No, it is not an Android"};
+if(navigator.userAgent.indexOf("x64") != -1 )
+{
+  var arch = "x64";
+}
+
+// __________________________________________________________________________________________________________________________________________
+
+// document.write("<table>")
+document.write("<tr><td><h3> User Agent Details </h3></td></tr>")
+document.write("<tr><td> What is the users OS? </td>")
+document.write("<td><b>"+os+"</b></td></tr>")
+document.write("<tr><td> What is the OS Architecture? ")
+document.write("<td><b>"+arch+"</b></td></tr>")
+document.write("<tr><td> What is the User's Browser? </td>");
+document.write("<td><b>"+browser+"</b></td></tr>")
+document.write("<tr><td> Is virtual reality supported? : </td>");
+document.write("<td><b>"+xrr+"</b></td></tr>");
+document.write("<td>Is the user on Android? </td>");
+document.write("<td><b>"+droid+"</b></td></tr>")
+
+
+
+
+
+
+
+
+
+  //______________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+document.write("<tr><td>"+'<h3> Browser Obtained Location </h3>'+"</td>")
+   		var options = {
+  		enableHighAccuracy: true,
+  		timeout: 5000,
+  		maximumAge: 0
+		};
+//____________________________________________________________________________________________________________________________
+
+function getLoc(pos) {
+  var curpos = pos.coords;
+
+  document.write("<td><br/><b><h3>"+'Your browser obtained current position is...'+"</h3></b><br/>");
+  document.write("<tr><td>"+`Latitude is at:<td><b>${curpos.latitude}</b>`+"</td><br/>");
+  document.write("<tr><td>"+`Longitude is at:<td><b> ${curpos.longitude}</b>`+"</td><br/>");
+  document.write("<tr><td>"+`More or less accurate to:<td><b> ${curpos.accuracy} meters.</b>`);
+  document.write(``+"<br/>"+"</td></tr>");
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(getLoc, error, options);
+
+})
+
+
+//____________________________________________________________________________________________________________________________
+
+
+document.write("</table>");
+
+onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
+
+//____________________________________________________________________________________________________________________________
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

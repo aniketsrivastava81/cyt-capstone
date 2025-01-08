@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  background-color: red;
+  width: 300px;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+<title></title>
+</head>
+<body>
+	<script>
+
+/*document.write("<div id='demo1'>Width: 300px, Border & Margin: 15px, padding: 50px </div>");
+
+document.getElementById("demo1").onmouseover = function() {mouseOver()};
+document.getElementById("demo1").onmouseout = function() {mouseOut()};
+
+
+function mouseOver() {
+  document.getElementById("demo1").style.backgroundColor = "lightblue";
+}
+
+function mouseOut() {
+  document.getElementById("demo1").style.width = "500px";
+}
+
+
+document.write("<p>get to see different properties working.</p>");
+document.write("<h1 id='demo'>Mouse over me</h1>");
+document.getElementById("demo").onmouseover = function() {mouseOver1()};
+document.getElementById("demo").onmouseout = function() {mouseOut1()};
+
+function mouseOver1() {
+  document.getElementById("demo").style.color = "green";
+}
+
+function mouseOut1() {
+  document.getElementById("demo").style.color = "blue";
+}
+
+*/
+document.write("<h1 id='demo2'>Check Console For Changes</h1>");
+
+document.getElementById("demo2").onmouseenter = function() {mouseEnter()};
+document.getElementById("demo2").onmouseleave = function(e) {mouseLeave()};
+
+document.getElementById("demo2").onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
+
+function mouseLeave(e) {
+  console.log('mouse has exited the heading');
+  console.log('location will not be tracked');
+  
+}
+
+function mouseEnter() {
+  console.log('mouse has entered the heading');
+  console.log('location is tagging will start once you exit heading again');
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

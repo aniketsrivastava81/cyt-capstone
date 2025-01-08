@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+document.write('<h3> browser obtained location </h3>')
+   		var options = {
+  		enableHighAccuracy: true,
+  		timeout: 5000,
+  		maximumAge: 0
+		};
+
+function getLoc(pos) {
+  var curpos = pos.coords;
+
+  document.write('Your browser obtained current position is:'+"<br/>");
+  document.write(`Latitude : ${curpos.latitude}`+"<br/>");
+  document.write(`Longitude: ${curpos.longitude}`+"<br/>");
+  document.write(`More or less ${curpos.accuracy} meters.`);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(getLoc, error, options);
+</script>
+</head>
+
+<body>
+<body>
+
+
+    
+</body>
+</html>
+

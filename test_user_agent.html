@@ -1,0 +1,72 @@
+<html>
+<head><title>test</title> 
+</head>
+<body>
+<script> // src="file:///C:/Users/Aniket%20Srivastava/Desktop/CYT/capstone/ua-parser.min.js">
+	//var a = UAParser.BROWSER;  
+document.write(navigator.userAgent+"<br/>");
+if(navigator.userAgent.indexOf("Firefox") != -1 )
+
+{
+           document.write ("User has Firefox installed.<br/>");
+//           document.write("<br/>"+navigator.userAgent+"</br>");
+}
+
+if(navigator.userAgent.indexOf("Windows") != -1 )
+
+{
+           document.write ("User is using Windows OS.");
+           document.write("<br/>");
+}
+
+if(navigator.userAgent.indexOf("Chrome") != -1 )
+
+{
+           document.write ("User has Chrome installed.<br/>");
+//           document.write("<br/>"+navigator.userAgent+"</br>");
+}
+
+if(navigator.userAgent.indexOf("Mac") != -1 )
+
+{
+           document.write ("User is using Mac OS.");
+           document.write("<br/>");
+}
+
+if(navigator.userAgent.indexOf("Edg") != -1 )
+
+{
+           document.write ("User has Edge installed based off Chrome.</br>");
+//           document.write("<br/>"+navigator.userAgent+"</br>");
+}
+
+if(navigator.userAgent.indexOf("Android") != -1 )
+
+{
+           document.write ("User is using Android OS.");
+           document.write("<br/>");
+}
+
+if(navigator.userAgent.indexOf("x64") != -1 )
+
+{
+           document.write ("User is using 64-bit OS.");
+           document.write("<br/>");
+}
+
+if(navigator.userAgent.indexOf("Edg") != -1 )
+
+{
+           document.write ("rv: ");
+           document.write(navigator.userAgent.indexOf('Edg'));
+}
+
+document.write("<br>YET TO ADD BUTTON TO TRACK AND ADD BUTTON TO END; BROWSER VERSION; ");
+document.write("<br>ADDED MOUSE CHANGE TRACKING IN CONSOLE; OS VERSION; ARCHITECTURE; <br/>");
+document.write("<br>YET TO ADD BOX FOR USE CASE; DISCUSS USE CASES; CSV CONVERSION FOR BOTH MOUSE AND PROPERTIES DETECTED; <br/>");
+// use cases; mouse outside box, mouse outside resolution, multiple mouse clicks at the same place, see if want to add keyloger);
+onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)}
+
+</script>
+</body>
+</html>

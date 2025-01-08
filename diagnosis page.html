@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+<style>
+div {
+  background-color: green;
+  width: 300px;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+
+	<script type="text/javascript">
+
+//var div = document.getElementById('divID');
+// div.innerHTML += 'Extra stuff';
+
+
+
+		// MOUSE DETECTION
+//				document.write('<p id="para"> asd asd </p>');	
+				document.getElementById("para").onmouseenter = function() {mouseEnter()};
+				document.getElementById("para").onmouseleave = function(e) {mouseLeave()};
+				document.getElementById("para").onmousemove = function(e)
+				{
+							// add loop in array, print array once left.					
+				 console.log("mouse location:", e.clientX, e.clientY);
+//				 var a = console.log("mouse location:", e.clientX, e.clientY); 
+				};
+
+					function mouseLeave(e) {
+						console.log('mouse has exited the heading');
+  						console.log('location will not be tracked');
+  						console.log(a);			
+  												}
+					function mouseEnter() {
+			  			console.log('mouse has entered the heading');
+  						console.log('location is tagging will start once you exit heading again');
+												}
+		</script>
+
+<title> DIAGNOSIS PAGE - MOUSE AND KEYBOARD DETECTION </title>
+
+<meta charset="utf-8"/>
+
+
+
+</head>
+<!-- _________________________________________________________________________________________________________________________________________  -->	
+
+
+<body>
+	<p id="para"> asdasdasdasd </p>
+<!-- _________________________________________________________________________________________________________________________________________  -->	
+	<div>
+		
+	
+	</div>
+<!-- _________________________________________________________________________________________________________________________________________  -->	
+
+	<div id="divID">
+			<p id="para2"> </p>
+		<script type="text/javascript">
+		// KEYBOARD DETECTION	
+		</script>
+	</div>
+
+<!-- _________________________________________________________________________________________________________________________________________  -->	
+</body>
+</html>
+
+ 

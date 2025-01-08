@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script> 
+            document.write("<h3>User Agent Data</h3>");
+
+ fetch('http://useragentstring.com/?&getJSON=all')
+        .then(   (apiUAdata) => { 
+            console.log(apiUAdata); 
+            return apiUAdata.json();
+        })
+        .then(   (UAactualdata) => {
+            console.log(UAactualdata);
+        
+            document.write("Broser agent: <b>"+UAactualdata.agent_type+"</b><br/>");
+            document.write("Browser name: <b>"+UAactualdata.agent_name+"</b><br/>");
+            document.write("Browser Version Number: <b>"+UAactualdata.agent_version+"</b><br/>");
+            document.write("operating system type: <b>"+UAactualdata.os_type+"</b><br/>");
+            document.write("OS Version Number: (linux) <b>"+UAactualdata.os_versionNumber+"</b><br/>");
+        
+        })
+        .catch(  (error) => {
+            console.log(error);
+        });
+
+   
+   //  <script src="https://code.jquery.com/jquery-3.2.1.min.js"> </s>
+            
+    </script>
+</head>
+
+<body>
+
+    
+</body>
+</html>
+
